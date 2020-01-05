@@ -25,7 +25,6 @@ def path_finder(maze):
 		if i not in visited:
 			visited.append(i)
 			look_around(i)
-
 	return False
 
 a = "\n".join([
