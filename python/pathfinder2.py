@@ -12,9 +12,6 @@ def path_finder(maze):
         path = p.path.copy()
         x = p.value
         if x == end_block:
-            m[x[0]][x[1]] = "x"
-            for i in m: 
-                print(i)
             return len(path)
         path.add(x)
         if x not in visited:

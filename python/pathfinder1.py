@@ -12,13 +12,13 @@ def path_finder(maze):
             if x[0]+1 < len(m):
                 if m[x[0]+1][x[1]] != "W":
                     to_visit.append((x[0]+1,x[1]))
-            if x[0]-1 > 0:
+            if x[0]-1 >= 0:
                 if m[x[0]-1][x[1]] != "W":
                     to_visit.append((x[0]-1,x[1]))
             if x[1]+1 < len(m[x[0]]):
                 if m[x[0]][x[1]+1] != "W":
                     to_visit.append((x[0],x[1]+1))
-            if x[1]-1 > 0:
+            if x[1]-1 >= 0:
                 if m[x[0]][x[1]-1] != "W":
                     to_visit.append((x[0],x[1]-1))
             visited.append(x)
