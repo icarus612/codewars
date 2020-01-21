@@ -1,6 +1,10 @@
 # https://www.codewars.com/kata/513e08acc600c94f01000001/train/python
 
 def rgb(r, g, b):
+    return (format(max(min(r, 255), 0), "02x") + format(max(min(g, 255), 0), "02x") + format(max(min(b, 255), 0), "02x")).upper()
+    
+# no format function for easy conversion 
+def rgb(r, g, b):
     r1, g1, b1 = int(r/16), int(g/16), int(b/16)
     r2, g2, b2 = r%16, g%16, b%16
     hex = [r1, r2, g1, g2, b1, b2]
