@@ -2,10 +2,11 @@
 
 def advice(agents, n):
     grid_dist = {}
-    print(n)
     for i in agents.copy():
         if i[0] >= n or i[1] >= n:
             agents.remove(i)
+    if len(agents) == n*n:
+        return []
     for a in agents:
         for y in range(n):
             for x in range(n):
@@ -16,5 +17,4 @@ def advice(agents, n):
                 else:
                     grid_dist[(x,y)] = d
     if len(agents) == 0: return [(x, y) for x in range(n) for y in range(n)]
-    furthest = max(grid_dist.values()) if len(grid_dist) > 0 else 0
-    return [i for i in grid_dist if grid_dist[i] == furthest] if furthest != 0 else []
+    return [i for i in grid_dist if grid_dist[i] == max(grid_dist.values())] if len(grid_dist) > 0 else []
